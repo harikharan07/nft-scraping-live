@@ -14,4 +14,6 @@ doc = BeautifulSoup(response.text,'html.parser')
 table_row_div = doc.find_all('table',class_='cmc-table')
 kj= len(table_row_div)
 print(kj)
-
+all_row_tags= doc.find_all('tr')
+jk=len(all_row_tags)
+print(jk)
