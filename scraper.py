@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+from selenium.webdriver.common.by import By
 nft_trending_url = 'https://coinmarketcap.com/nft/collecttions'
 
 def get_driver():
@@ -17,8 +17,7 @@ if __name__ == "__main__" :
  print('fetching the page')
  driver.get(nft_trending_url)
  print('Page title:', driver.title)
- 
- print('get the list div')
- name_list_table_class='cmc-table'
- name_divs = driver.find_elements_by_class_name(name_list_table_class)
- print(f'found {len(name_divs)}table')
+ print('get the content div')
+ table_tag='table'
+ table_divs = driver.find_element(By.TAG_NAME,table_tag)
+ print(f' Found {len(table_divs)} rows')
