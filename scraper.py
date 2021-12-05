@@ -18,6 +18,6 @@ if __name__ == "__main__" :
  driver.get(nft_trending_url)
  print('Page title:', driver.title)
  print('get the content div')
- table_tag='table'
- table_divs = driver.find_element(By.TAG_NAME,table_tag)
+ table_tag='span'
+ table_divs = driver.find_elements(By.TAG_NAME,table_tag)
  print(f' Found {len(table_divs)} rows')
